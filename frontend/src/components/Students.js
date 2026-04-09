@@ -16,15 +16,17 @@ function Students() {
   }, []);
 
   return (
-    <div>
+    <div className="card">
       <AddStudent onStudentAdded={fetchStudents} />
 
-      <h2>Students</h2>
-      {students.map(s => (
-        <div key={s.id}>
-          <p>{s.name} | {s.email} | Age: {s.age}</p>
-        </div>
-      ))}
+      <h2 style={{ marginTop: '20px' }}>Students</h2>
+      <ul className="item-list">
+        {students.map(s => (
+          <li key={s.id}>
+            <strong>{s.name}</strong> | {s.email} | Age: {s.age}
+          </li>
+        ))}
+      </ul>
     </div>
   );
 }

@@ -1,17 +1,24 @@
 import { useEffect, useState } from "react";
 import api from "../api";
+import AddProgress from "./AddProgress";
 
 function Progress() {
   const [progress, setProgress] = useState([]);
 
-  useEffect(() => {
+  const fetchProgress = () => {
     api.get("/progress")
       .then(res => setProgress(res.data.data));
+  };
+
+  useEffect(() => {
+    fetchProgress();
   }, []);
 
   return (
     <div className="card">
-      <h2>Progress</h2>
+      <AddProgress onProgressAdded={fetchProgress} />
+
+      <h2 style={{ marginTop: '20px' }}>Progress</h2>
       <ul className="item-list">
         {progress.map((p, index) => (
           <li key={index}>

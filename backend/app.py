@@ -46,6 +46,30 @@ def add_student():
 
     return {"message": "Student added successfully"}
 
+@app.route('/add-course', methods=['POST'])
+def add_course():
+    data = request.json
+    cur = mysql.connection.cursor()
+    # Assuming course_id, course_name, difficulty_level
+    cur.execute(
+        "INSERT INTO Courses (course_id, course_name, difficulty_level) VALUES (%s, %s, %s)",
+        (data['id'], data['course_name'], data['difficulty_level'])
+    )
+    mysql.connection.commit()
+    return {"message": "Course added successfully"}
+
+@app.route('/add-progress', methods=['POST'])
+def add_progress():
+    data = request.json
+    cur = mysql.connection.cursor()
+    # Assuming student_id, course_id, completion_percentage
+    cur.execute(
+        "INSERT INTO Progress (student_id, course_id, completion_percentage) VALUES (%s, %s, %s)",
+        (data['student_id'], data['course_id'], data['completion_percentage'])
+    )
+    mysql.connection.commit()
+    return {"message": "Progress added successfully"}
+
 # import routes
 from routes.students import *
 
