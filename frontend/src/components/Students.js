@@ -1,25 +1,30 @@
 import { useEffect, useState } from "react";
 import api from "../api";
+import AddStudent from "./AddStudent";
 
 function Students() {
   const [students, setStudents] = useState([]);
 
-  useEffect(() => {
+  const fetchStudents = () => {
     api.get("/students")
       .then(res => setStudents(res.data))
       .catch(err => console.log(err));
+  };
+
+  useEffect(() => {
+    fetchStudents();
   }, []);
 
   return (
-    <div className="card">
+    <div>
+      <AddStudent onStudentAdded={fetchStudents} />
+
       <h2>Students</h2>
-      <ul className="item-list">
-        {students.map(s => (
-          <li key={s.id}>
-            <strong>{s.name}</strong> | {s.email} | Age: {s.age}
-          </li>
-        ))}
-      </ul>
+      {students.map(s => (
+        <div key={s.id}>
+          <p>{s.name} | {s.email} | Age: {s.age}</p>
+        </div>
+      ))}
     </div>
   );
 }
