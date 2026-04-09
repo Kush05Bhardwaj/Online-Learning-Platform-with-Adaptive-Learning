@@ -5,11 +5,12 @@ import Progress from "../components/Progress";
 function Dashboard() {
   return (
     <div>
-      <h1>Learning Dashboard 🚀</h1>
-
-      <Students />
-      <Courses />
-      <Progress />
+      <h1 className="dashboard-header">Learning Dashboard 🚀</h1>
+      <div className="dashboard-content">
+        <Students />
+        <Courses />
+        <Progress />
+      </div>
     </div>
   );
 }

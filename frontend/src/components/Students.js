@@ -11,13 +11,15 @@ function Students() {
   }, []);
 
   return (
-    <div>
+    <div className="card">
       <h2>Students</h2>
-      {students.map(s => (
-        <div key={s.id}>
-          <p>{s.name} | {s.email} | Age: {s.age}</p>
-        </div>
-      ))}
+      <ul className="item-list">
+        {students.map(s => (
+          <li key={s.id}>
+            <strong>{s.name}</strong> | {s.email} | Age: {s.age}
+          </li>
+        ))}
+      </ul>
     </div>
   );
 }

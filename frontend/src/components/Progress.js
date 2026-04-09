@@ -10,13 +10,15 @@ function Progress() {
   }, []);
 
   return (
-    <div>
+    <div className="card">
       <h2>Progress</h2>
-      {progress.map((p, index) => (
-        <p key={index}>
-          {p[0]} - {p[1]} → {p[2]}%
-        </p>
-      ))}
+      <ul className="item-list">
+        {progress.map((p, index) => (
+          <li key={index}>
+            <strong>{p[0]}</strong> - {p[1]} → {p[2]}%
+          </li>
+        ))}
+      </ul>
     </div>
   );
 }

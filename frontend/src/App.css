@@ -21,11 +21,16 @@ body {
 /* Dashboard Styling */
 .dashboard-header {
   text-align: center;
-  margin-bottom: 30px;
-  color: #2c3e50;
-  font-size: 2.5rem;
-  border-bottom: 2px solid #ddd;
-  padding-bottom: 10px;
+  margin-bottom: 40px;
+  color: #1a252f;
+  font-size: 3rem;
+  font-weight: 800;
+  text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
+  background: linear-gradient(90deg, #3498db, #9b59b6);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  border-bottom: 3px solid #e0e6ed;
+  padding-bottom: 15px;
 }
 
 .dashboard-content {
@@ -36,30 +41,43 @@ body {
 
 /* Common Component Styling */
 .card {
-  background: #fff;
+  background: #ffffff;
   padding: 20px;
-  border-radius: 8px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  border-radius: 12px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.08);
+  border-top: 4px solid #3498db;
+  transition: transform 0.2s ease-in-out;
+}
+
+.card:hover {
+  transform: translateY(-4px);
 }
 
 .card h2 {
-  color: #34495e;
+  color: #2c3e50;
   margin-bottom: 15px;
-  border-bottom: 1px solid #eee;
-  padding-bottom: 5px;
+  border-bottom: 2px solid #ecf0f1;
+  padding-bottom: 8px;
 }
 
 /* Lists and Tables */
 .item-list {
   list-style: none;
+  padding-left: 0;
 }
 
 .item-list li {
   background: #fdfdfd;
-  margin-bottom: 10px;
-  padding: 15px;
-  border: 1px solid #e1e8ed;
-  border-radius: 4px;
+  margin-bottom: 12px;
+  padding: 16px;
+  border-left: 5px solid #2ecc71;
+  border-radius: 6px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.04);
+  transition: background 0.1s;
+}
+
+.item-list li:hover {
+  background: #f0fdf4;
 }
 
 /* Basic Form Styles */
@@ -93,4 +111,63 @@ body {
 
 .btn:hover {
   background: #2980b9;
+}
+
+/* Global Nav Styling */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 0 20px;
+  margin-bottom: 30px;
+}
+
+.nav-brand {
+  font-size: 1.8rem;
+  font-weight: 800;
+  color: #3498db;
+  text-decoration: none;
+}
+
+.nav-links {
+  display: flex;
+  gap: 20px;
+}
+
+.nav-links a {
+  text-decoration: none;
+  font-weight: 600;
+  color: #34495e;
+  transition: color 0.2s ease;
+}
+
+.nav-links a:hover {
+  color: #3498db;
+}
+
+/* Home Page */
+.home-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 60vh;
+  text-align: center;
+}
+
+.hero-section {
+  max-width: 600px;
+}
+
+.hero-subtitle {
+  font-size: 1.25rem;
+  color: #7f8c8d;
+  margin-bottom: 40px;
+}
+
+.btn-large {
+  display: inline-block;
+  padding: 15px 35px;
+  font-size: 1.2rem;
+  text-decoration: none;
+  font-weight: bold;
 }

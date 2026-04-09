@@ -14,8 +14,6 @@ mysql = MySQL(app)
 def home():
     return "Backend Running 🚀"
 
-app.config['JSONIFY_PRETTYPRINT_REGULAR'] = True
-
 @app.route('/courses')
 def get_courses():
     cur = mysql.connection.cursor()

@@ -10,13 +10,15 @@ function Courses() {
   }, []);
 
   return (
-    <div>
+    <div className="card">
       <h2>Courses</h2>
-      {courses.map(c => (
-        <p key={c[0]}>
-          {c[1]} ({c[2]})
-        </p>
-      ))}
+      <ul className="item-list">
+        {courses.map(c => (
+          <li key={c[0]}>
+            <strong>{c[1]}</strong> ({c[2]})
+          </li>
+        ))}
+      </ul>
     </div>
   );
 }
