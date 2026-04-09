@@ -2,7 +2,10 @@
 
 A full-stack web application designed to manage students, courses, and track their adaptive learning progress interactively.
 
-![image](https://github.com/Kush05Bhardwaj/Online-Learning-Platform-with-Adaptive-Learning/assets/placeholder.png)
+### Screenshots
+![Home Page](frontend/public/Screenshot%202026-04-09%20104149.png)
+![Dashboard 1](frontend/public/Screenshot%202026-04-09%20104208.png)
+![Dashboard 2](frontend/public/Screenshot%202026-04-09%20104220.png)
 
 ## Features
 - **Learning Dashboard**: A centralized hub to view all students, their enrolled courses, and completion progress.
